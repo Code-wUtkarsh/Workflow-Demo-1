@@ -4,6 +4,11 @@ on:
    # - cron: "0 14 * * *"
     - cron: "*/5 * * * *" # just for testing
 
+permissions:
+  issues: write
+  pull-requests: write
+  contents: read
+
 jobs:
     stale:
         runs-on: ubuntu-latest
