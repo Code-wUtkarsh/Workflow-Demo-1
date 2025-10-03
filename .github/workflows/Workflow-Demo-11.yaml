@@ -7,9 +7,15 @@ on:
 jobs:
     stale:
         runs-on: ubuntu-latest
+        permissions:
+                actions: write
+                contents: write # only for delete-branch option
+                issues: write
+                pull-requests: write
         steps:
             - uses: actions/stale@v8
               with:
                 stale-issue-message: "This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions."
                 days-before-stale: 1
                 days-before-close: 5
+              
